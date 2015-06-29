@@ -1,0 +1,7 @@
+INDEX VERSION 1.3+/home/jacksparow/Desenvolvimento/workspaces/workspace-portifolio/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+1454828195.index
+3276102077.index
+2714959757.index
+2234697442.index
+604489481.index
+309287309.index
