@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+    version="2.0">
+	
+	<navigation-rule>
+		<from-view-id>componentes-visuais.xhtml</from-view-id>
+		
+		<navigation-case>
+			<from-outcome>proximo</from-outcome>
+			<to-view-id>templates-modularizacao.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<navigation-rule>
+		<from-view-id>templates-modularizacao.xhtml</from-view-id>
+		
+		<navigation-case>
+			<from-outcome>proximo</from-outcome>
+			<to-view-id>navegacao.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>templates-modularizacao.xhtml</from-view-id>
+		
+		<navigation-case>
+			<from-outcome>anterior</from-outcome>
+			<to-view-id>componentes-visuais.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	
+	<navigation-rule>
+		<from-view-id>navegacao.xhtml</from-view-id>
+		
+		<navigation-case>
+			<from-outcome>anterior</from-outcome>
+			<to-view-id>templates-modularizacao.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+</faces-config>
