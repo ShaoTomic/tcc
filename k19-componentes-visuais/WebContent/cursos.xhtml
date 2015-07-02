@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html 
+	xmlns="http://www.w3.org/1999/xhtml" 
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+
+<h:head>
+	<title>K19 Treinamentos</title>
+</h:head>
+
+<h:body>
+
+	<h:outputStylesheet name="k19.css" library="css"/>
+
+	<h:form>
+		<h:panelGrid columns="2">
+			<h:outputLabel value="Nome: " for="campo-nome" />
+			<h:inputText value="#{cursosBean.curso.nome}" id="campo-nome"/>
+			
+			<h:outputLabel value="Sigla: " for="campo-sigla" />
+			<h:inputText value="#{cursosBean.curso.sigla }" id="campo-sigla" />
+		
+			<h:commandButton value="Adicionar" action="#{cursosBean.adicionarCurso }"/> 
+		</h:panelGrid>
+	</h:form>
+	
+	<h1>Alguns cursos da k19</h1>
+		<ul>
+			<ui:repeat value="#{cursosBean.cursos }" var="curso">
+				<li>
+					<h:outputText value="#{curso.sigla}: #{curso.nome} : #{cursosBean.cursos.indexOf(curso)}"/>
+				</li>
+			</ui:repeat>
+		</ul>
+	
+</h:body>
+
+</html>
