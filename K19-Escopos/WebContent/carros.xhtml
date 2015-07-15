@@ -1,11 +1,37 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<title>Insert title here</title>
-</head>
-<body>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-</body>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+	<title>K19 Treinamentos</title>
+</h:head>
+
+<h:body>
+	<h:link value="menu" outcome="menu"/>
+	<h:form>
+		<h:panelGrid columns="2">
+			<h:outputLabel value="Marca: " for="campo-marca"/>
+			<h:inputText value="#{carroBean.carro.marca}" id="campo-marca"/>
+			
+			<h:outputLabel value="Modelo: " for="campo-modelo"/>
+			<h:inputText value="#{carroBean.carro.modelo}" id="campo-modelo"/>
+			
+			<h:commandButton value="Adicionar" action="#{carroBean.adicionarCarro()}"/>
+		</h:panelGrid>
+	</h:form>
+	
+	<h:panelGroup rendered="#{not empty carroBean.carros}">
+		<h1>Lista de carros:</h1>
+		<ul>
+			<ui:repeat value="#{carroBean.carros}" var="carro">
+				<li><h:outputText value="#{carro.marca} #{carro.modelo}"/></li>
+			</ui:repeat>
+		</ul>
+	</h:panelGroup>
+	
+</h:body>
 </html>

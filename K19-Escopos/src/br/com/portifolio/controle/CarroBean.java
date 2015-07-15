@@ -4,19 +4,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 
 import br.com.portifolio.modelo.Carro;
 
 @ManagedBean(name="carroBean")
-@RequestScoped
+@SessionScoped
 public class CarroBean {
 	
 	private List<Carro> carros = new ArrayList<Carro>();
 	private Carro carro = new Carro();
 	
 	public void adicionarCarro(){
-		this.carros.add(carro);
+		this.carros.add(this.carro);
 		this.carro = new Carro();
 	}
 	
