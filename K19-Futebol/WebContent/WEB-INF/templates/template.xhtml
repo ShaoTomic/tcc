@@ -14,7 +14,7 @@
 	<h:outputStylesheet library="css" name="style.css"/>
 	
 	<div id="header">
-		<h:form style="float:left;" >
+		<h:form style="float:left;" rendered="#{not empty sessionScope.usuario}">
 			<h:link value="Times" outcome="times"/>
 			<h:outputText value="&#160;" />
 			<h:link value="Jogadores" outcome="jogadores"/>

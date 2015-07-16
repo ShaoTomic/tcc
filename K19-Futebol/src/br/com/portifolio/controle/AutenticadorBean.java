@@ -22,7 +22,8 @@ public class AutenticadorBean {
 		AutenticadorBean.mapa.put("k19", "k19");
 	}
 	
-	public String autentica(){
+	public String autentica(){ 
+		
 		FacesContext fc = FacesContext.getCurrentInstance();
 		
 		if(AutenticadorBean.mapa.containsKey(this.usuario)
@@ -31,17 +32,18 @@ public class AutenticadorBean {
 				ExternalContext ec = fc.getExternalContext();
 				HttpSession session = (HttpSession) ec.getSession(false);
 				session.setAttribute("usuario", this.usuario);
-			return "/times";
+				return "/times";
+				
 		}else{
-			FacesMessage fm = new FacesMessage("usuário e/ou senha inválidos");
-			fm.setSeverity(FacesMessage.SEVERITY_ERROR);
-			fc.addMessage(null, fm);
-			return "/login";
+			
+				FacesMessage fm = new FacesMessage("usuário e/ou senha inválidos");
+				fm.setSeverity(FacesMessage.SEVERITY_ERROR);
+				fc.addMessage(null, fm);
+				return "/login";
 		}
 	}
 	
-	public String registraSaida(){
-		FacesContext fc = FacesContext.getCurrentInstance();
+	public String registraSaida(){FacesContext fc = FacesContext.getCurrentInstance();
 		ExternalContext ec = fc.getExternalContext();
 		HttpSession session = (HttpSession) ec.getSession(false);
 		session.removeAttribute("usuario");
