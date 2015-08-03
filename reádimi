@@ -1,0 +1,78 @@
+Para importar o projeto
+
+1º cole o projeto (eonto) em seu eclipse workspace
+2º abra o eclipse
+3º click em File/Import/General/Existing Projects into Workspace/
+4º no browse selecione o projeto e finalize a ação clicando em "Finish"
+------------------------------------------------------------------------------------------------
+Adicionando o Servidor TomCat ao Eclipse
+
+1º Na aba "Servers" click em "No servers are available, Click this link to create a new server"
+2º já na aba "New Server" selecione a pasta Apache e depois a opção "Tomcat v8.0 Server"
+obs:caso vc não tenha esta versão em seu PC, clique em next e aponte para a pasta 
+existente dentro do arquivo baixado "apache-tomcat-8.0.17";
+3º após instalado o servidor apache tom cat vá até a aba Servers novamente
+e clique com o botão direito no servidor e selecione a opção "Add and Remove"
+4º selecione o projeto "eonto" existente no campo "Available" depois clique 
+em "Add" e depois finaliza a operação.
+
+Para iniciar o servidor vá a aba Servers e clique no botão play (cor verde a direta )
+Para acessar as paginas main.jsp ou cbox2.jsp
+abra seu browser, firefox de preferência, e utilize o link
+
+"http://localhost:8080/eonto/cbox2" ou "http://localhost:8080/eonto/main"
+
+obs: a opção de busca livre da página main está fora de operação
+-----------------------------------------------------------------------------------------
+caso apareça um ponto de interrogação no projeto quando este for importado
+será necessário o importe do JRE
+1º clique com o botão direito no projeto 
+2º selecione a opção "Propriedades"
+3º selecione a opção "Java Build Path"
+4º selecione a opçao "Add Library"
+5º em Add Library selecione a opção "JRE System Library"
+6º selecione a opção "Workspace default JRE(java-x-x-x) e finalize clicando na opção 
+"Finish"
+----------------------------------------------------------------------------------------------
+Sobre a ontologia
+
+1º - copie a ontologia "eonto/modeloFinal.ttl" para algum lugar em seu PC
+2º - entre na classe FrontController (/eonto/src/java/main/br/com/eonto/controller/FrontController.java)
+3º - altere o valor da variável "ont" para o caminho escolhido para armazenar a ontologia
+
+------------------------------------------------------------------------------------------------
+onde estão as coisas?
+
+javascript
+
+/eonto/WebContent/resources/js/cbox2/cbox2Ajax.js
+/eonto/WebContent/resources/js/cbox2/cbox2Core.js
+/eonto/WebContent/resources/js/cbox2/cbox2Test.js
+
+JPSs
+
+/eonto/WebContent/WEB-INF/views/cbox2.jsp
+/eonto/WebContent/WEB-INF/views/main.jsp
+
+----------------------------------------------------------------------------------
+Por que algumas classes terminam com "JSON"?
+
+porque tais classes são auxiliares, todos os 
+seus atributos são do tipo String ou List
+para facilitar a conversão automática por parte
+tanto do Jackson quanto do Spring.
+obs: a criação de tais classes auxiliares  não é uma regra.
+
+-----------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
